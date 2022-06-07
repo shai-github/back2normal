@@ -1,0 +1,277 @@
+* {
+    box-sizing: border-box;
+}
+
+html, body {
+    margin: 0;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 20px;
+    height: 100%;
+    width:100%;
+    /*overflow: hidden;*/
+    overflow-x: scroll;
+}
+
+a:link, a:visited {
+    color: black;
+    font-family: 'Padauk', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #d64161;
+    font-family: 'Padauk', sans-serif;
+    font-size: 16px;
+}
+.divtitle {
+    text-align: left;
+    background: white;
+    padding-top: 15px;
+    padding-left: 25px;
+    font-family: 'Cutive Mono', monospace;
+    font-size: 28px;
+}
+
+.chartfooter {
+    text-align: left;
+    background: white;
+    padding-top: 0px;
+    padding-left: 25px;
+    padding-bottom: 10px;
+    font-family: 'Padauk', sans-serif;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+
+
+/* main container */
+.container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    overflow-y: scroll;
+    overflow-x: scroll;
+}
+
+#leftmap {
+    flex: 40%;
+    padding: 20px;
+    overflow-y: hidden;
+    overflow-x: hidden;
+    height: 100%;
+
+}
+
+#rightcol {
+    height: 100%;
+    background-color: #d4d9de;
+    flex: 60%;
+    padding: 20px;
+    display: block;
+}
+
+#rightheader{
+    height: 10%;
+    width: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
+}
+
+
+#rightdash {
+    height: 90%;
+    width: 100%;
+    overflow-y: scroll;
+    display: none;
+}
+
+#rightabout {
+    height: 90%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    overflow-y: scroll;
+    overflow-x: scroll;
+    display: contents;
+    text-align: right;
+    position: relative;
+    font-family: 'Padauk', sans-serif;
+}
+
+#rightabout p {
+    padding: 0px 100px 20px 150px;
+    line-height: 1.6;
+}
+
+.chart_row {
+    width: 100%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    background: white;
+    justify-content: center;
+}
+
+.about_row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    height: 100%;
+    background-color: white;
+    padding-top: 200px;
+}
+
+#lefttitle {
+    font-family: 'Cutive Mono', monospace;
+    font-size: 70px;
+    padding-bottom: 15px;
+    padding-left: 10px;
+    position: relative;
+}
+
+#navbar {
+    display: flex;
+    background-color: #fafafa;
+    flex-wrap: wrap;
+    height: 5%;
+    position: relative;
+    width: 640px
+    overflow-x:hidden;
+}
+
+
+#rightzip {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 50px;
+    color: #001a33;
+    padding-left: 10px;
+    position: relative;
+    background: #708090;
+    text-align: right;
+    padding-right: 30px;
+}
+
+#righttitle {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 18px;
+    color: #001a33;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    position: relative;
+    background: #8c99a6;
+    text-align: right;
+    padding-right: 30px;
+}
+
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #ada397;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #feb236;
+}
+
+@import url(//cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.css);
+
+#map {
+    width: 640px;
+    height: 790px;
+    overflow-x: hidden;
+}
+
+#map svg {
+    position: relative;
+    overflow-x: hidden;
+}
+
+#map path {
+    fill: #000;
+    fill-opacity: .2;
+    stroke: #fff;
+    stroke-width: 1.5px;
+}
+
+#map path:hover {
+    fill: brown;
+    fill-opacity: .7;
+}
+
+.d3-tip {
+    line-height: 1;
+    padding: 12px;
+    background: rgba(43, 43, 43, 0.8);
+    color: #fff;
+    border-radius: 2px;
+}
+
+#pieChart {
+    position:relative;
+    width:400px;
+    height: 400px;
+    padding-left: 50px;
+    padding-bottom: 100px;
+}
+
+#barChart {
+    position: relative;
+    /*top:160px;*/
+    /*left:410px;*/
+    height: 250px;
+}
+
+.slice {
+    font-size: 14pt;
+    font-family: 'Rajdhani', sans-serif;
+    fill: #36486b; //svg specific - instead of color
+font-weight: bold;
+}
+
+
+.axis text {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+}
+
+.chart_title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 24px;
+}
+
+.xAxis {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 16px;
+    fill: black;
+}
+
+.yAxis {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 17px;
+    fill: #001a33;
+}
+
+table {
+    border-collapse: collapse;
+    border: 0px;
+    font-family: 'Rajdhani', sans-serif;
+    color: #5C5558;
+    font-size: 16px;
+    text-align: right;
+}

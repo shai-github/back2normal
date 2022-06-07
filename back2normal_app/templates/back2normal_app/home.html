@@ -1,0 +1,104 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>back2normal</title>
+    <meta charset="UTF-8">
+    <link href="{% static 'css/back2normal_app.css' %}" rel="stylesheet">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css2?family=Cutive+Mono&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Audiowide|Rajdhani" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Padauk&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div id="leftmap">
+        <div id="lefttitle">back2normal</div>
+        <div id="map" class="leaflet-container leaflet-retina leaflet-fade-anim" tabindex="0"
+             style="position: relative;"></div>
+    </div>
+
+    <div id="rightcol">
+        <div id="rightheader">
+            <div id="rightzip">About</div>
+            <div id="righttitle"><b>by theteam</b> cole frank, christie ibaraki, shai slotky</div>
+        </div>
+
+        <div id="rightdash">
+
+            <div class="divtitle">Foot Traffic Index</div>
+            <div class="chart_row">
+                <div id ="groundTruth"></div>
+            </div>
+            <div class="chartfooter">Foot traffic data was sourced from GroundTruth's Daily Foot Traffic Tracker
+                [<a href="https://www.groundtruth.com/insight/industry-foot-traffic-tracker/" target="_blank">groundtruth.com/insight/industry-foot-traffic-tracker</a>].
+                Data is available from December 20, 2019 through March 3, 2021.
+                GroundTruth data is indexed to show relative increases and decreases in daily activity at places of interest.</div>
+
+
+            <div class="divtitle">Daily Covid Cases and Vaccinations</div>
+            <div class="chart_row">
+                <div id="dynamic_series"></div>
+            </div>
+            <div class="chartfooter">Covid case numbers are from IDPH
+                [<a href="https://observablehq.com/@chicagoreporter/historical-illinois-covid-19-zip-code-data" target="_blank">observablehq.com/@chicagoreporter/historical-illinois-covid-19-zip-code-data</a>].
+                The plot shows the change in number of confirmed covid cases averaged over the previous seven days.
+                The vaccination data is from the Chicago Data Portal API
+                [<a href="https://data.cityofchicago.org/" target="_blank">data.cityofchicago.org</a>].
+                The plot shows the number of vaccine doses administered averaged over the previous seven days.
+            </div>
+
+            <div class="divtitle">Demographic Data</div>
+            <div class="chart_row">
+                <div id="pieChart"></div>
+                <div id="barChart"></div>
+            </div>
+            <div class="chartfooter">Demographic data is from the Census API for the American Community Survey for 2009-2019.
+            [<a href="https://www.census.gov/data/developers/data-sets/acs-5year.html" target="_blank">www.census.gov/data/developers/data-sets/acs-5year.html</a>].</div>
+
+        </div>
+
+        <div id="rightabout">
+            <div class="about_row">
+                <p>
+                <br>From public health impacts to economic downturn, the COVID-19 pandemic - and requisite social distancing measures - have altered the lives of many Chicago residents.
+                    Using data from a variety of sources at the ZIP Code level, we built a dashboard that visualizes some of the changes in the daily lives of Chicagoans over the course of the pandemic.
+                    This project is primarily focused on observing the ways in which daily activities have and have not begun to return to their pre-pandemic forms in different parts of the city. </br>
+                    <br><b>Explore the data by selecting a ZIP Code region in the map.</b></br>
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!--<script src="https://code.jquery.com/jquery-3.5.0.js"></script>-->
+<script src="https://api.tiles.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js"></script>
+<script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""/>
+<script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.5/leaflet.js"></script>
+<script src="https://d3js.org/d3.v4.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+<script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+<script src="static/js/data_neighborhood_names.js"></script>
+<script src="static/js/data_groundtruth.js"></script>
+<script src="static/js/data_covid.js"></script>
+<script src="static/js/data_demographics.js"></script>
+
+<script src="static/js/plot_groundtruth_timeseries.js"></script>
+<script src="static/js/plot_covid_timeseries.js"></script>
+<script src="static/js/plot_demographic_barchart.js"></script>
+<script src="static/js/plot_demographic_piechart.js"></script>
+<script src="static/js/plot_chicago_map.js"></script>
+
+</body>
+</html>
